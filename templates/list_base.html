@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Docker Manager{% endblock %}
+
+{% block content %}
+	<div class="page-header">
+		<h1>Docker Manager</h1>
+	</div>
+	<nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+		<ul class="nav navbar-nav">
+			<li><a href="">Apps</a></li>
+			<li><a href="">Services</a></li>
+		</ul>
+		<p class="navbar-text">|</p>
+		<ul class="nav navbar-nav">
+			<li><a href="">Images</a></li>
+			<li><a href="">Containers</a></li>
+			<li><a href="">Hosts</a></li>
+		</ul>
+		<form role="search" class="navbar-form navbar-right" action="/registry/search/" method='GET'>
+            <div class="form-group">
+              <input type="text" placeholder="search registry" class="form-control" name="term">
+            </div>
+            <button class="btn btn-default" type="submit">Submit</button>
+        </form>
+      </div><!-- /.container-fluid -->
+    </nav>
+    
+    {% block list_content %}{% endblock %}
+{% endblock %}

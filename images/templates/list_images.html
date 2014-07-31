@@ -1,0 +1,28 @@
+{% extends 'list_base.html' %}
+
+{% block list_content %}
+	<table class="table table-striped table-hover">
+		<thead>
+			<tr>
+			<th>#</th>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Tag</th>
+			<th>Created</th>
+			<th>Size</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for img in images %}
+				<tr>
+					<td>{{forloop.counter}}</td>
+					<td>{{img.Id}}</td>
+					<td>{{img.RepoTags}}</td>
+					<td>{{img.RepoTags}}</td>
+					<td>{{img.Created}}</td>
+					<td>{{img.VirtualSize}}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}
